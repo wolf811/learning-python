@@ -7,18 +7,28 @@
 # print("=====================================")
 
 # print("============ Задание 2 ==============".upper())
-my_list = []
-i = 0
-while i < 5:
-    i += 1
-    my_val = input("Введите любое значение: ")
-    my_list.append(my_val)
-print(my_list)
+
+# Наикривейший способ
+# mylist = []
+# i = 0
+# n = 0
+# while i < 5:
+#     i += 1
+#     n += 1
+#     myval = input(f"Введите 5 любых значений, {n}-е: ")
+#     mylist.append(myval)
+# print(mylist)
+# # if len(mylist) > 4 and len(mylist) % 2 != 0:
+# f_el = mylist.pop(0)
+# mylist.insert(1, f_el)
+# n_el = mylist.pop(2)
+# mylist.insert(3, n_el)
+# print(mylist)
 
 # print("=====================================")
 
 # print("============ Задание 3 ==============".upper())
-# # !!!! НАПИСАТЬ ЕЩЕ ЧЕРЕЗ СПИСОК
+# # !!!! НАПИСАТЬ ЕЩЕ ЧЕРЕЗ СПИСОК, а лучше сразу переделать
 # my_dict = {
 #     1: 'зима',
 #     2: 'зима',
@@ -47,7 +57,9 @@ print(my_list)
 
 # print("============ Задание 4 ==============".upper())
 
-
+text = (input("Введите строку из нескольких слов: ").split())
+for ind, el in enumerate(text, 1):
+    print(ind, el[:10])
 
 # print("=====================================")
 
