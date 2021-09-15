@@ -52,20 +52,34 @@
 
 # res = my_dict.get(numb)
 # print(res)
-
+mydict = {
+    'Зима': [12, 1, 2],
+    'Весна': [3, 4, 5],
+    'Лето': [6, 7, 8],
+    'Осень': [9, 10, 11]
+}
+w = mydict.get('Зима')
+print(w)
 # print("=====================================")
 
 # print("============ Задание 4 ==============".upper())
 
-text = (input("Введите строку из нескольких слов: ").split())
-for ind, el in enumerate(text, 1):
-    print(ind, el[:10])
+# text = (input("Введите строку из нескольких слов: ").split())
+# for ind, el in enumerate(text, 1):
+#     print(ind, el[:10])
 
 # print("=====================================")
 
 # print("============ Задание 5 ==============".upper())
 
+# mylist2 = [7, 5, 3, 3, 2]
 
+# el = int(input("Новый элемент рейтинга: "))
+# mylist2.append(el)
+# mylist2.sort()
+# mylist2.reverse()
+# # print(sorted(mylist2, reverse=True))
+# print(mylist2)
 
 # print("=====================================")
 
