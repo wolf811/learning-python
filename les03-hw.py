@@ -1,20 +1,20 @@
 # ============= Задание 1 ===========
 
-# def division ():
-#     while True:
-#         try:
-#             a = int(input("Введите первое число: "))
-#             b = int(input("Введите второе число: "))
-#             return (a / b)
-#             break
-#         except ZeroDivisionError:
-#             print('На ноль делить нельзя! Повторите')
+def division (*args):
+    while True:
+        try:
+            a = int(input("Введите первое число: "))
+            b = int(input("Введите второе число: "))
+            return (a / b)
+            break
+        except ZeroDivisionError:
+            print('На ноль делить нельзя! Повторите')
 
-# print(division())
+print(division())
 
 # ============= Задание 2 ===========
 
-def user (**k)
+# def user (**k)
 
 # ============= Задание 3 ===========
 # ============= Задание 4 ===========
