@@ -29,15 +29,17 @@
 # print(my_func(10,5,6))
 
 # ============= Задание 4 ===========
+
+# Способ №1
 # x = int(input("Введите целое число: "))
-# y = -int(input("Введите отрицательную степень: "))
+# y = int(input("Введите степень: "))
 
 # def myfunk(x,y):
-#     res = x ** y
+#     res = x ** (-y)
 #     return res
-# print(myfunk(x,y)
+# print(myfunk(x,y))
 
-# НЕ РАБОТАЕТ!
+# Способ №2 НЕ РАБОТАЕТ!
 # def myfunk2(x,y):
 #     i = 1
 #     res = 1
@@ -49,17 +51,18 @@
 
 # ============= Задание 5 ===========
 
-def sumnumber():
-    text = input("Введите числа через пробел или 'end' для выхода: ")
-    while text != "end":
-        mylist = text.split()
-        # intlist = [int(i) for i in mylist]
-        for i in range(0, len(mylist)):
-            mylist[i] = int(mylist[i])
-        return sum(mylist)
-    else:
-        print('Вы вышли!')
-print(sumnumber())
+# def sumnumber():
+#     """Часть решения, которая вычисляет только сумму чисел"""
+#     text = input("Введите числа через пробел или 'end' для выхода: ")
+#     while text != "end":
+#         mylist = text.split()
+#         # intlist = [int(i) for i in mylist]
+#         for i in range(0, len(mylist)):
+#             mylist[i] = int(mylist[i])
+#         return sum(mylist)
+#     else:
+#         print('Вы вышли!')
+# print(sumnumber())
 
 # def sumnumber():
 #     global text 
@@ -77,3 +80,11 @@ print(sumnumber())
 # else:
 #     print('Вы вышли!')
 # ============= Задание 6 ===========
+# def int_func():
+#     text = input('Ввести слово: ')
+#     return text.capitalize()
+# def str_func(*args):
+#     text = input('Ввести слова через пробел: ').title()
+#     return f'{text} ' + int_func()
+
+# print(str_func())
