@@ -4,7 +4,6 @@ from functools import reduce
 # print(payroll())
 
 # ============= Задание 2 ===========
-
 # first_list = [2, 52, 86, 123, 100]
 # second_list = [el+1 for el in first_list]
 # print(f"Первый список: {first_list}")
@@ -23,8 +22,16 @@ from functools import reduce
 # print(list_b)
 
 # ============= Задание 5 ===========
-list_c = [i for i in range(100, 200, 2)]
-print(list_c)
+# start, stop, step = 100, 1000, 2
+# stop += step 
+# list_c = [i for i in range(start, stop, step)]
+# # def reduce_list(x,y):
+# #     return x * y
+# # print(reduce(reduce_list, list_c))
+# reduce_list = reduce(lambda x,y: x * y, list_c)
+# print(reduce_list)
 
 # ============= Задание 6 ===========
+
+
 # ============= Задание 7 ===========
