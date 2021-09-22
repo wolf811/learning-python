@@ -1,5 +1,6 @@
 from les04_payroll import payroll
 from functools import reduce
+import les04_count_cycle
 # ============= Задание 1 ===========
 # print(payroll())
 
@@ -32,6 +33,6 @@ from functools import reduce
 # print(reduce_list)
 
 # ============= Задание 6 ===========
-
+print(les04_count_cycle.numbers())
 
 # ============= Задание 7 ===========
