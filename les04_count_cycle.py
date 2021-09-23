@@ -1,8 +1,8 @@
-from itertools import count, cycle
-
-def numbers():
-    for i in count(3):
-        if i > 10:
+def numbers(itr, lim):
+    mylist = []
+    for i in itr:
+        if i > lim:
             break
         else:
-            return int(i)
+            mylist.append(i)
+    return mylist

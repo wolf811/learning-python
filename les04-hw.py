@@ -1,6 +1,9 @@
 from les04_payroll import payroll
 from functools import reduce
 import les04_count_cycle
+from itertools import count, cycle
+from math import factorial
+
 # ============= Задание 1 ===========
 # print(payroll())
 
@@ -33,6 +36,32 @@ import les04_count_cycle
 # print(reduce_list)
 
 # ============= Задание 6 ===========
-print(les04_count_cycle.numbers())
+# print(les04_count_cycle.numbers(count(3), 10))
+# count()
+# for i in count(3):
+#     if i > 10:
+#         break
+#     else:
+#         print(i)
+
+# # cycle()
+# mylist = ['a', 1, 'xyz', None]
+# i = 0
+# for el in cycle(mylist):
+#     if i > 5:
+#         break
+#     print(el)
+#     i += 1
 
 # ============= Задание 7 ===========
+# Задание не решено, т.к. не понял условие
+# def fact(n):
+#     for el in range(n):
+#         yield factorial(el)
+
+# g = fact(4)
+# print(g)
+
+# for el in g:
+#     print(el)
+
