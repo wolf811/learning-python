@@ -1,4 +1,4 @@
-import math
+import json
 # ============= Задание 1 ===========
 # lst = []
 # with open(r"les05-hw_for_file/f_task1.txt", 'w') as f_task1:
@@ -86,8 +86,61 @@ import math
 #     print(f"Сумма чисел в файле равна: {sum_lst}")
 
 # ============= Задание 6 ===========
-with open(r"les05-hw_for_file/f_task6.txt", encoding="utf-8") as f_task6:
-    lines = f_task6.readlines()
-    mydict = {}
-    list_key = []
-    list_val = []
+### НЕ СПРАВИЛСЯ!
+# with open(r"les05-hw_for_file/f_task6.txt", encoding="utf-8") as f_task6:
+#     lines = f_task6.readlines()
+#     mydict = {}
+#     list_key = []
+#     list_val = []
+#     for line in lines:
+#         lst = line.split()
+#         list_key.append(lst[0])
+#         print(lst)
+    
+#         for s in lst:
+#             l = len(s)
+#             i = 0
+#             while i < l:
+#                 s_int = ''
+#                 a = s[i]
+#                 while '0' <= a <= '9':
+#                     s_int += a
+#                     i += 1
+#                     if i < l:
+#                         a = s[i]
+#                     else:
+#                         break
+#                 i += 1
+#                 if s_int != '':
+#                     list_val.append(int(s_int))
+#     print(list_key)
+#     print(list_val)
+# дальше как в тумане .....
+
+# ============= Задание 7 ===========
+### Решено не полностью, не исключил фирму с убытками из средней прибыли
+# with open(r"les05-hw_for_file/f_task7.txt", encoding="utf-8") as f_task7:
+#     lines = f_task7.readlines()
+#     firm_dict = {}
+#     average_dict = {}
+#     list_key = []
+#     list_val = []
+#     res_list = []
+#     for line in lines:
+#         lst = line.split()
+#         for i in range(len(lst)):
+#             try:
+#                 lst[i] = int(lst[i])
+#             except ValueError:
+#                 pass
+#         profit = lst[2] - lst[3]
+#         list_key.append(lst[0])
+#         list_val.append(profit)
+#     firm_dict.update(zip(list_key, list_val))
+#     average_profit = sum(firm_dict.values()) / len(firm_dict)
+#     average_dict.setdefault("average_profit", average_profit)
+#     res_list.append(firm_dict)
+#     res_list.append(average_dict)
+#     print(res_list)
+# with open(r"les05-hw_for_file/f_task7_json.json", 'w', encoding="utf-8") as f_task7_json:
+#     json.dump(res_list, f_task7_json)
