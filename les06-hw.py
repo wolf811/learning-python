@@ -52,4 +52,67 @@
 
 # ============= Задание 4 ============
 class Car:
-    pass
+    name = None
+    color = None
+    speed = None
+    is_police = False
+
+    # def __init__(self, name, color, speed):
+    #     self.name = name
+    #     self.color = color
+    #     self.speed = speed
+    #     self.is_police = False
+    #     self.show_speed()
+
+    def go(self):
+        print(f"Автомобиль {self.name} начал движение")
+
+    def stop(self):
+        print(f"Автомобиль {self.name} остановился")
+
+    def direction(self):
+        turn = {
+            "go_left": "налево",
+            "go_right": "направо",
+            "go_straight": "прямо",
+        }
+        print(f"Автомобиль движется {turn}")
+
+    def show_speed(self):
+        print(f"Текущая скорость автомобиля {self.name} - {self.speed} км/ч")
+        if town_car.speed > 60 or work_car.speed > 40:
+            print("Вы превысили скорость")
+
+class TownCar(Car):
+    name = "Skoda"
+    color = "серый"
+    speed = 70
+
+class SportCar(Car):
+    name = "Ferrari"
+    color = "красный"
+
+class WorkCar(Car):
+    name = "Gazel"
+    color = "белый"
+    speed = 50
+
+class PoliceCar(Car):
+    name = "Ford"
+    color = "синий"
+    is_police = True
+    # print(f"Автомобиль {name}, {color}, максимальная скорость {max_speed} км/ч.")
+    # if is_police:
+    #     print("Предназначен для полиции.")
+
+town_car = TownCar()
+sport_car = SportCar()
+work_car = WorkCar()
+police_car = PoliceCar()
+
+work_car.go()
+work_car.show_speed()
+work_car.direction()
+work_car.stop()
+
+
