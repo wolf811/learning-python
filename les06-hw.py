@@ -51,68 +51,98 @@
 # print(y.name, y.surname, y.position)
 
 # ============= Задание 4 ============
-class Car:
-    name = None
-    color = None
-    speed = None
-    is_police = False
+# class Car:
 
-    # def __init__(self, name, color, speed):
-    #     self.name = name
-    #     self.color = color
-    #     self.speed = speed
-    #     self.is_police = False
-    #     self.show_speed()
+#     def __init__(self, name, color, speed, is_police=False):
+#         self.name = name
+#         self.color = color
+#         self.speed = speed
+#         print("========================")
 
-    def go(self):
-        print(f"Автомобиль {self.name} начал движение")
+#     def go(self):
+#         print(f"Автомобиль {self.name} {self.color} цвета поехал")
 
-    def stop(self):
-        print(f"Автомобиль {self.name} остановился")
+#     def stop(self):
+#         print(f"Автомобиль {self.name} {self.color} цвета остановился")
 
-    def direction(self):
-        turn = {
-            "go_left": "налево",
-            "go_right": "направо",
-            "go_straight": "прямо",
-        }
-        print(f"Автомобиль движется {turn}")
+#     def turn(self, direction):
+#         print(f"Автомобиль {self.name} {self.color} цвета движется {direction}, со скоростью {self.speed} км/ч ")
 
-    def show_speed(self):
-        print(f"Текущая скорость автомобиля {self.name} - {self.speed} км/ч")
-        if town_car.speed > 60 or work_car.speed > 40:
-            print("Вы превысили скорость")
+#     def show_speed(self):
+#         print(f"Текущая скорость автомобиля {self.name} {self.color} цвета - {self.speed} км/ч")
 
-class TownCar(Car):
-    name = "Skoda"
-    color = "серый"
-    speed = 70
+# class TownCar(Car):
+#     def show_speed(self):
+#         if self.speed > 60:
+#             print("Вы превысили скорость, притормозите!")
+#         else:
+#             Car.show_speed(self)
 
-class SportCar(Car):
-    name = "Ferrari"
-    color = "красный"
+# class SportCar(Car):
+#     def show_speed(self):
+#         if self.speed > 150:
+#             print("Вы превысили скорость, притормозите!")
+#         else:
+#             Car.show_speed(self)
 
-class WorkCar(Car):
-    name = "Gazel"
-    color = "белый"
-    speed = 50
+# class WorkCar(Car):
+#     def show_speed(self):
+#         if self.speed > 40:
+#             print("Вы превысили скорость, притормозите!")
+#         else:
+#             Car.show_speed(self)
 
-class PoliceCar(Car):
-    name = "Ford"
-    color = "синий"
-    is_police = True
-    # print(f"Автомобиль {name}, {color}, максимальная скорость {max_speed} км/ч.")
-    # if is_police:
-    #     print("Предназначен для полиции.")
+# class PoliceCar(Car):
+#     def __init__(self, name, color, speed):
+#         Car.__init__(self, name, color, speed, is_police=True)
 
-town_car = TownCar()
-sport_car = SportCar()
-work_car = WorkCar()
-police_car = PoliceCar()
+# town_car = TownCar("Skoda", ",белого", 71)
+# town_car.go()
+# town_car.turn("прямо")
+# town_car.show_speed()
+# town_car.stop()
 
-work_car.go()
-work_car.show_speed()
-work_car.direction()
-work_car.stop()
+# sport_car = SportCar("Ferrari", "конечно красного", 185)
+# sport_car.go()
+# sport_car.turn("налево")
+# sport_car.show_speed()
+# sport_car.stop()
 
+# work_car = WorkCar("Газель", "синего", 35)
+# work_car.go()
+# work_car.turn("направо")
+# work_car.show_speed()
+# work_car.stop()
 
+# police_car = PoliceCar("Ford", "серого", 120)
+# police_car.go()
+# police_car.turn("налево")
+# police_car.show_speed()
+# police_car.stop()
+
+# ============= Задание 5 ============
+# class Stationery:
+#     def __init__(self, title):
+#         self.title = title
+
+#     def draw(self):
+#         print("Запуск отрисовки")
+
+# class Pen(Stationery):
+#     def draw(self):
+#         print(f"Запуск отрисовки {self.title}")
+
+# class Pencill(Stationery):
+#     def draw(self):
+#         print(f"Запуск отрисовки {self.title}")
+
+# class Handle(Stationery):
+#     def draw(self):
+#         print(f"Запуск отрисовки {self.title}")
+
+# pen = Pen("ручки")
+# pencil = Pencill("карандаша")
+# handle = Handle("маркера")
+# pen.draw()
+# pencil.draw()
+# handle.draw()
