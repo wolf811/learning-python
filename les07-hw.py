@@ -39,28 +39,32 @@ from random import randrange
 
 
 # ============= Задание 3 ===========
-class Cell:
-    def __init__(self, numb_cell):
-        self.numb_cell = int(numb_cell)
+# class Cell:
+#     def __init__(self, numb_cell):
+#         self.numb_cell = int(numb_cell)
         
-    def __add__(self, other):
-        return Cell(self.numb_cell + other.numb_cell)
+#     def __add__(self, other):
+#         return Cell(self.numb_cell + other.numb_cell)
         
 
-    def __sub__(self):
-        pass
+#     def __sub__(self):
+#         pass
 
-    def __mul__(self):
-        pass
+#     def __mul__(self):
+#         pass
 
-    def __truediv__(self):
-        pass
+#     def __truediv__(self):
+#         pass
 
-    def make_order(self):
-        pass
+#     def make_order(self):
+#         pass
 
-cell_1 = Cell(3)
-cell_2 = Cell(2)
-sum_cell = cell_1 + cell_2
-print(sum_cell)
+# cell_1 = Cell(3)
+# cell_2 = Cell(2)
+# sum_cell = cell_1 + cell_2
+# print(sum_cell)
 
+import re
+s = "sfsfd"
+f = re.findall(r'sfdsd',s)
+print(f)
