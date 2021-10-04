@@ -35,37 +35,38 @@ from abc import ABC, abstractmethod
 # print("===============")
 
 # ============= Задание 2 ===========
-class Clothes(ABC):
-    def __init__(self, par):
-        self.par = par
+# class Clothes(ABC):
+#     def __init__(self, par):
+#         self.par = par
 
-    @abstractmethod
-    def consumption(self):
-        pass
+#     @abstractmethod
+#     def consumption(self):
+#         pass
 
-class Coat(Clothes):
-    def __init__(self, par):
-        super().__init__(par)
-        print(f"Размер пальто {self.par}")
+# class Coat(Clothes):
+#     def __init__(self, par):
+#         super().__init__(par)
+#         print(f"Размер пальто {self.par}")
 
-    @property
-    def consumption(self):
-        return round(self.par / 6.5 + 0.5, 2)
+#     @property
+#     def consumption(self):
+#         return round(self.par / 6.5 + 0.5, 2)
 
-class Costume(Clothes):
-    def __init__(self, par):
-        super().__init__(par)
-        print(f'Рост костюма {self.par}')
+# class Costume(Clothes):
+#     def __init__(self, par):
+#         super().__init__(par)
+#         print(f'Рост костюма {self.par}')
 
-    @property
-    def consumption(self):
-        return round(self.par * 2 + 0.3, 2)
+#     @property
+#     def consumption(self):
+#         return round(self.par * 2 + 0.3, 2)
 
-coat = Coat(52)
-print(f"Расход ткани на пальто: {coat.consumption}")
-costume = Costume(1.73)
-print(f"Расход ткани на костюм: {costume.consumption}")
-print(f'Общий расход: {coat.consumption + costume.consumption}')
+# coat = Coat(52)
+# print(f"Расход ткани на пальто: {coat.consumption}")
+# costume = Costume(1.73)
+# print(f"Расход ткани на костюм: {costume.consumption}")
+# print(f'Общий расход: {coat.consumption + costume.consumption}')
+
 # ============= Задание 3 ===========
 # class Cell:
 #     def __init__(self, numb_cell):
