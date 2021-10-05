@@ -17,10 +17,14 @@ class Date:
 
     @staticmethod
     def get_valid(day, month, year):
-        day_valid = day if day in range(1, 32) else print("Такой даты не бывает")
-        month_valid = month if month in range(1, 13) else print("Такого месяца нет")
-        year_valid = year if year in range(1900, 2025) else print("Год не находится в нужном диапазоне")
-
-date_numb = Date.get_number(12,4,1985)
-
-Date.get_valid(12, 4, 1985)
+        if day in range(1, 32):
+            return day
+        elif month in range(1, 13):
+            return month
+        elif year in range(1900, 2025):
+            return year
+        else:
+            print("Дата введена не правильно")
+date_cls = Date("ddfd", 4, 1985)
+# date_numb = Date.get_number(12, 4, 1985)
+# print(date_cls.get_valid(12, 4, 1985))
