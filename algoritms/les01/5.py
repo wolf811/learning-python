@@ -1,21 +1,31 @@
 # 5. Пользователь вводит две буквы. Определить, на каких местах алфавита они стоят и сколько между ними находится букв.
 
 def get_alf():
-    let1 = input('Введите первую букву: ')
-    let2 = input('Введите вторую букву: ')
-    pos_let1 = ord(let1) - 64
-    pos_let2 = ord(let2) - 64
-    # return f'Места букв в алфавите: {let1}, {let2}'
-    return f'{let1} - на месте {ord(let1)}; {let2} - на месте {ord(let2)}'
-    # alf = {
-    #     '1': 'a',
-    #     '2': 'b',
-    #     '3': 'c',
-    # }
-    # for k,v in alf.items():
-    #     if v == let1:
-    #         return k
+    let1, let2 = [
+        i.upper() for i in input('Введите две латинские буквы через пробел: ').split()
+    ]
+
+    let_list = [chr(i) for i in range(ord('A'), ord('Z') + 1)]
+
+    index_let1 = let_list.index(let1) + 1
+    index_let2 = let_list.index(let2) + 1
+
+    if index_let1 < index_let2:
+        step = 1
+    else:
+        step = -1
+
+    print(f'Буква {let1} на позиции: {index_let1}')
+    print(f'Буква {let2} на позиции: {index_let2}')
+
+    print(
+        f'Между ними буквы: \
+    {let_list[let_list.index(let1) + step:let_list.index(let2):step]} \
+    ({abs(index_let1 - index_let2) - 1})'
+    )
 
 
-print(get_alf())
+if __name__ == '__main__':
+    get_alf()
+
     
