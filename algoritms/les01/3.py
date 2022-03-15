@@ -3,3 +3,8 @@
 def coordinats():
     pass
     
+
+if __name__ == '__main__':
+    coordinats()
+
+# не решил

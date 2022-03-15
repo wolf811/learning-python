@@ -19,5 +19,10 @@ def user_gen():
         gen = chr(randint(ord(a), ord(b)))
     else:
         gen = f'{type_gen} - данный тип не предусмотрен'
-    return f'Случайное значение в диапазоне от {a} до {b} = {gen}'
-print(user_gen())
+    print(f'Случайное значение в диапазоне от {a} до {b} = {gen}')
+    
+
+if __name__ == '__main__':
+    user_gen()
+
+# не правильно работает
