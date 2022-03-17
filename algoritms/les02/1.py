@@ -32,5 +32,5 @@ def calc():
             print(f'Ошибка! Неверный знак!!!')
             
 
-
-calc()
+if __name__ == '__main__':
+    calc()
