@@ -22,10 +22,10 @@ def calc():
         elif sign == '/':
             try:
                 div = n1 / n2
-            except ZeroDivisionError:
-                print('На ноль делить нельзя! Повторите ввод')
-            else:
                 print(f'Деление: {n1} / {n2} = {div}')
+            except ZeroDivisionError:
+                print('Ошибка! На ноль делить нельзя!')
+
         elif sign == '0':
             break
         else:
