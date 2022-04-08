@@ -6,7 +6,6 @@ from random import randint
 
 MAX_SIZE = 50
 
-
 def merge_sort(array):
 
     if len(array) < 2:
