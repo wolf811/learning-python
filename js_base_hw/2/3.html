@@ -21,7 +21,21 @@
 <script>
   "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
+  let a = +prompt("Введите первое число:");
+  let b = +prompt("Введите второе число:");
+
+  if (Number.isNaN(a && b)) {
+    console.log("Где-то введено не число!");
+  } else {
+    if (a > 0 && b > 0) {
+      console.log(a - b);
+    } else if (a < 0 && b < 0) {
+      console.log(a * b);
+    } else {
+      console.log (a + b);
+    }
+  }
+
 </script>
 </body>
 </html>

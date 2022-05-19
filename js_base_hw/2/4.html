@@ -31,7 +31,30 @@
 <script>
   "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
+  function printSumNumbers(num1, num2) {
+    console.log(num1 + num2);
+  }
+  printSumNumbers(10, 5);
+
+  function printDifferenceNumbers(num1, num2) {
+    // if (num1 >= num2) {
+    //   console.log(num1 - num2);
+    // } else {
+    //   console.log(num2 - num1);
+    // }
+    (num1 >= num2) ? console.log(num1 - num2) : console.log(num2 - num1);
+  }
+  printDifferenceNumbers(5, 10);
+
+  function printMultNumbers(num1, num2) {
+    console.log(num1 * num2);
+  }
+  printMultNumbers(10, 5);
+
+  function printDivisionNumbers(num1, num2) {
+    console.log(num1 / num2);
+  }
+  printDivisionNumbers(10, 5);
 </script>
 </body>
 </html>
