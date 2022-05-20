@@ -32,7 +32,68 @@ Infinity делать не нужно, однако, в случае если б
 <script>
   "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
+  /**
+   * Функция выводит в консоль сумму 2х чисел
+   * @param {number} num1 - первое число.
+   * @param {number} num2 - второе число.
+  */
+  function printSumNumbers(num1, num2) {
+    console.log(num1 + num2);
+  }
+  printSumNumbers(10, 5);
+
+  /**
+   * Функция выводит в консоль разность 2х чисел, при этом вычитает из большего 
+   * числа меньшее, либо возвращает 0, если числа равны.
+   * @param {number} num1 - первое число.
+   * @param {number} num2 - второе число.
+  */
+  function printDifferenceNumbers(num1, num2) {
+    (num1 >= num2) ? console.log(num1 - num2) : console.log(num2 - num1);
+  }
+  printDifferenceNumbers(5, 10);
+
+  /**
+   * Функция выводит в консоль произведение 2х чисел
+   * @param {number} num1 - первое число.
+   * @param {number} num2 - второе число.
+  */
+  function printMultNumbers(num1, num2) {
+    console.log(num1 * num2);
+  }
+  printMultNumbers(10, 5);
+  /**
+   * Функция выводит в консоль результат деления 2х чисел
+   * @param {number} num1 - первое число.
+   * @param {number} num2 - второе число.
+  */
+  function printDivisionNumbers(num1, num2) {
+    console.log(num1 / num2);
+  }
+  printDivisionNumbers(10, 5);
+
+  /**
+   * Функция выводит в консоль результат арифметических операций 2х чисел, 
+   * используя вспомогательные функции
+   * @param {number} num1 - первое число.
+   * @param {number} num2 - второе число.
+   * @param {string} operation - математические операторы.
+  */
+  function mathOperation(arg1, arg2, operation) {
+    switch(operation) {
+      case "+": 
+        return printSumNumbers(arg1, arg2);
+      case "-":
+        return printDifferenceNumbers(arg1, arg2);
+      case "*":
+        return printMultNumbers(arg1, arg2);
+      case "/":
+        return printDivisionNumbers(arg1, arg2);
+      default:
+        return NaN;
+    }
+  }
+  console.log(mathOperation(5, 10, "/"));
 </script>
 </body>
 </html>
