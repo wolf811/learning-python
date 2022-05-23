@@ -29,7 +29,13 @@
     },
   ];
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
+  let sale = 15;
+
+  products.forEach(elem => {
+    elem.price -= elem.price * sale / 100;
+  })
+
+  console.log(products);
 </script>
 </body>
 </html>
