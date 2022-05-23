@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+<body>
+<!--
+Обязательное задание.
+
+Необходимо реализовать четыре функции, каждая функция должна принимать по два
+числа и выполнять одну из операций (каждая функция выполняет одну из них):
+1. Сложение
+2. Разность
+3. Умножение
+4. Деление
+
+Необходимо сделать так, чтобы функция вернула число, например выражение
+`console.log(sum(2, 6));` должно вывести число 8 в консоль (sum - функция
+сложения в данном примере, ваши названия функций могут отличаться).
+
+Округлять значения, которые возвращают функции не нужно, однако, обратите
+внимание на разность, функция должна вычесть из большего числа меньшее, либо
+вернуть 0, если числа равны.
+
+Функциям всегда передаются корректные числа, проверки на NaN, Infinity делать
+не нужно.
+
+Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
+-->
+<script>
+  "use strict";
+  /**
+   * Функция выводит в консоль сумму 2х чисел
+   * @param {number} num1 - первое число.
+   * @param {number} num2 - второе число.
+  */
+  function printSumNumbers(num1, num2) {
+    console.log(num1 + num2);
+  }
+  printSumNumbers(10, 5);
+
+  /**
+   * Функция выводит в консоль разность 2х чисел, при этом вычитает из большего 
+   * числа меньшее, либо возвращает 0, если числа равны.
+   * @param {number} num1 - первое число.
+   * @param {number} num2 - второе число.
+  */
+  function printDifferenceNumbers(num1, num2) {
+    // if (num1 >= num2) {
+    //   console.log(num1 - num2);
+    // } else {
+    //   console.log(num2 - num1);
+    // }
+    (num1 >= num2) ? console.log(num1 - num2) : console.log(num2 - num1);
+  }
+  printDifferenceNumbers(5, 10);
+
+  /**
+   * Функция выводит в консоль произведение 2х чисел
+   * @param {number} num1 - первый параметр.
+   * @param {number} num2 - второе число.
+  */
+  function printMultNumbers(num1, num2) {
+    console.log(num1 * num2);
+  }
+  printMultNumbers(10, 5);
+  /**
+   * Функция выводит в консоль результат деления 2х чисел
+   * @param {number} num1 - первое число.
+   * @param {number} num2 - второе число.
+  */
+  function printDivisionNumbers(num1, num2) {
+    console.log(num1 / num2);
+  }
+  printDivisionNumbers(10, 5);
+</script>
+</body>
+</html>
