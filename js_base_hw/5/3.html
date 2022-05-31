@@ -77,7 +77,15 @@
   которому был совершен клик.
   Необходимо использовать делегирование.
   */
-
+  let bodyEl = document.querySelector('body');
+  bodyEl.addEventListener('click', event => {
+    let target = event.target.tagName;
+    console.dir(lower(target));
+    // if(target.tagName.setAttribute('class', 'super_element')) {
+    //   console.log(`Класс "super_element" присутствует в элементе "${target.tagName}"`);
+    // }
+    console.log(`Класс "super_element" отсутствует в элементе "${target}"`);
+  })
 
   /*
   4. Сделайте, чтобы при наведении на textarea в консоли появлялось сообщение:
