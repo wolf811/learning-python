@@ -95,10 +95,16 @@
     const formEl = document.querySelectorAll('form');
     formEl.forEach(el => {
         el.addEventListener('input', event => {
-            if(el.value !== "") {
+            if(el.value === "") {
+                console.log(el);
                 event.target.classList.add('error');
             }
-        })
+
+        });
+        el.addEventListener('focusout', event => {
+            event.target.classList.remove('error');
+
+        });
     })
 
     </script>
