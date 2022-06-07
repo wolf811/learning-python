@@ -92,13 +92,38 @@
     данному полю).
     Если поле было чем-либо заполнено, подсветку (класс error) необходимо убрать.
     НЕ РЕШЕНО!!! */
-    const formEl = document.querySelectorAll('form');
-    formEl.forEach(el => {
-        // el.addEventListener('focusin', () => el.classList.add('error'));
-        // el.addEventListener('focusout', () => el.classList.remove('error'));
-        
+    const formEl = document.querySelector('form');
+    const formControl = formEl.querySelectorAll('.form-control');
+    formEl.addEventListener('submit', event => {
+        formControl.forEach(el => {
+            if (el.value === "") {
+                event.preventDefault();
+                el.classList.add('error');
+                console.log(`Поле ${el} пустое`);
+            }
+            el.addEventListener('blur', () => {
+                el.classList.remove('error');
+            });
+
+        });
+
     });
 
+    /* ТАК ДО КОНЦА И НЕ ПОНЯЛ КАК ПРАВИЛЬНО И В КАКОЙ ПОСДОВАТЕЛЬНОСТИ 
+    ПРИМЕНЯТЬ СОБЫТИЯ, ЧТОБЫ ПОЛУЧИЛОСЬ КАК В УСЛОВИИ, А МОЖЕТ НЕПРАВИЛЬНО ПОНЯЛ
+    УСЛОВИЕ */
+
+    // function validation() {
+    //     formControl.forEach(el => {
+    //         if (el.value === "") {
+    //             event.target.classList.add('error');
+    //             console.log(`Поле ${el} пустое`);
+    //         }
+    //         if (el.value) {
+    //             event.target.classList.remove('error');
+    //         }
+    //     })
+    // }
     </script>
 </body>
 

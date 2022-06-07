@@ -38,29 +38,40 @@
     1. При наведении на любую из звезд, данной звезде должен ставиться класс
     golden, также такой класс должен ставиться всем звездам до нее слева.
     */
-    const divEl = document.querySelectorAll('.stars_container');
+    const divEl = document.querySelector('.stars_container');
     const starEl = document.querySelectorAll('.fa-star');
-    console.lo
-    const arrStarEl = Array.from(starEl);
-    console.log(arrStarEl);
-    const currentStar = 
+    console.log(starEl);
+    starEl.forEach(el => {
+        el.addEventListener('mouseover', event => {
+            event.target.classList.add('golden');
+        })
+    })
 
-    
-
-
+    /*
+    НЕ ЗНАЮ КАК ПОЛУЧИТЬ ПОЗИЦИЮ УКАЗАННОГО ЭЛЕМЕНТА, ЧТОБЫ В ДАЛЬНЕЙШЕМ
+    ВЫЧИСЛИТЬ ОСТАЛЬНЫЕ СЛЕВА И ДОБАВИТЬ КЛАСС
+    */    
     /*
     2. Когда мы уводим курсор мыши от звезды, все поставленные классы из первого
     задания должны быть удалены.
      */
 
-        // el.addEventListener('mouseout', event => {
-        //   event.target.classList.remove('golden');
-        // });
+    starEl.forEach(el => {
+        el.addEventListener('mouseout', event => {
+            event.target.classList.remove('golden');
+        })
+    })
 
     /*
     3. Когда мы переводим мышь от одной звезды к другой, у нас могут мигать
     звезды (временно могут становиться черными). Почему так? Напишите словами.
     Можем ли мы это исправить? Если да, то предложите решение.
+    */
+
+    /*
+    У меня такого не происходит), но могу предположить, что это связано с 
+    погружением, т.к. при наведении вначале попадаем на родителя, а только потом
+     на сам элемент
     */
     </script>
 </body>
