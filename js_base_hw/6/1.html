@@ -44,24 +44,25 @@
     1. Установите всем элементам с классом "productName" размер шрифта 24px.
      */
     const productNameEl = document.querySelectorAll('.productName');
-    productNameEl.forEach(el => {el.style.fontSize = "24px";});
+    productNameEl.forEach(el => { el.style.fontSize = "24px"; });
 
     /*
     2. Установите всем элементам с классом "product" внешний отступ справа 50px.
      */
     const productEls = document.querySelectorAll('.product');
-    productEls.forEach(el => {el.style.marginRight = "50px";});
+    productEls.forEach(el => { el.style.marginRight = "50px"; });
 
     /*
     3. При клике на кнопку "В корзину" название кнопки должно поменяться на
     "Добавлено" и кнопка должна стать неактивной.
      */
-    const buttonEl = document.querySelectorAll('button');
-    buttonEl.forEach(el => {
-        el.addEventListener('click', event => {
-            event.target.innerHTML = 'Добавлено';
-            event.target.setAttribute('disabled', true);
-        });
+    document.body.addEventListener('click', event => {
+        const button = event.target;
+        if(button.tagName !== 'BUTTON') {
+            return;
+        }
+        button.innerHTML = 'Добавлено';
+        button.disabled = true;
     });
 
     /*
@@ -72,24 +73,19 @@
     отображенный товар на странице на созданную копию. У данной копии также
     должен правильно работать код из 3-го задания.
     */
-    const productEl = document.querySelector('.product');
-    const cloneProductEl = productEl.cloneNode(true);
+
+    const cloneProductEl = document.querySelector('.product').cloneNode(true);
     cloneProductEl.querySelector('.productName').innerHTML = 'Товар 4';
     cloneProductEl.querySelector('img').src = 'https://picsum.photos/id/1080/200/300';
-    // document.body.appendChild(cloneProductEl);
+    // const lastProductEl = productEls[productEls.length - 1].replaceWith(cloneProductEl);
+    document.querySelector('.product:last-of-type').replaceWith(cloneProductEl);
 
-    const lastProductEl = productEls[productEls.length - 1];
-    document.body.replaceChild(cloneProductEl, lastProductEl);
-    console.log(lastProductEl);
-    console.log(productEls);
-
-    // НЕ ЗНАЮ КАК ЗАСТАВИТЬ РАБОТАТЬ КОД ИЗ 3-ГО ЗАДАНИЯ!
 
     /*
     5. По истечении 2 секунд с момента открытия страницы первый товар должен быть
     удален из html.
     */
-     
+
     const productOneEl = document.querySelector('.product:first-child')
     window.addEventListener('load', () => {
         setTimeout(() => productOneEl.remove(), 2000);

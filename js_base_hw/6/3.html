@@ -39,28 +39,89 @@
     golden, также такой класс должен ставиться всем звездам до нее слева.
     */
     const divEl = document.querySelector('.stars_container');
-    const starEl = document.querySelectorAll('.fa-star');
-    console.log(starEl);
-    starEl.forEach(el => {
-        el.addEventListener('mouseover', event => {
-            event.target.classList.add('golden');
-        })
-    })
+    const starEls = document.querySelectorAll('.fa-star');
 
-    /*
-    НЕ ЗНАЮ КАК ПОЛУЧИТЬ ПОЗИЦИЮ УКАЗАННОГО ЭЛЕМЕНТА, ЧТОБЫ В ДАЛЬНЕЙШЕМ
-    ВЫЧИСЛИТЬ ОСТАЛЬНЫЕ СЛЕВА И ДОБАВИТЬ КЛАСС
-    */    
+    // Функция для продвинутого варианта
+    function handler(method) {
+        return function (event) {
+            if(!event.target.classList.contains('fas')) {
+                return;
+            }
+
+            let star = event.target;
+            do {
+                star.classList[method]('golden');
+                star = star.previousElementSibling;
+            } while (star);
+        };
+    };
+
+    // Продвинутый вариант
+    divEl.addEventListener('mouseover', handler('add'));
+
+    // Вариант 1
+    // divEl.addEventListener('mouseover', event => {
+    //     if(!event.target.classList.contains('fas')) {
+    //         return;
+    //     }
+        
+    //     for (const star of starEls) {
+    //         star.classList.add('golden');
+    //         if(star === event.target) {
+    //             break;
+    //         }
+    //     }
+    // });
+
+    // Вариант 2
+    // divEl.addEventListener('mouseover', event => {
+    //     if(!event.target.classList.contains('fas')) {
+    //         return;
+    //     }
+        
+    //     let star = event.target;
+    //     do {
+    //         star.classList.add('golden');
+    //         star = star.previousElementSibling;
+    //     } while (star);
+
+    // });
+   
     /*
     2. Когда мы уводим курсор мыши от звезды, все поставленные классы из первого
     задания должны быть удалены.
      */
 
-    starEl.forEach(el => {
-        el.addEventListener('mouseout', event => {
-            event.target.classList.remove('golden');
-        })
-    })
+    // Вариант 1
+    // divEl.addEventListener('mouseout', event => {
+    //     if(!event.target.classList.contains('fas')) {
+    //         return;
+    //     }
+
+    //     for (const star of starEls) {
+    //         star.classList.remove('golden');
+    //         if(star === event.target) {
+    //             break;
+    //         }
+    //     }
+    // });
+
+    // Вариант 2
+    // divEl.addEventListener('mouseout', event => {
+    //     if(!event.target.classList.contains('fas')) {
+    //         return;
+    //     }
+        
+    //     let star = event.target;
+    //     do {
+    //         star.classList.remove('golden');
+    //         star = star.previousElementSibling;
+    //     } while (star);
+    // });
+
+    // Продвинутый вариант
+    divEl.addEventListener('mouseout', handler('remove'));
+
 
     /*
     3. Когда мы переводим мышь от одной звезды к другой, у нас могут мигать
@@ -69,10 +130,15 @@
     */
 
     /*
-    У меня такого не происходит), но могу предположить, что это связано с 
-    погружением, т.к. при наведении вначале попадаем на родителя, а только потом
-     на сам элемент
+    Между звездами появляется пробел, т.к. есть перенос строки после каждого тега <i>.
+    Чтобы это исправить надо удалить текстовые узлы (пробел)
     */
+
+    divEl.childNodes.forEach(node => {
+        if(node.nodeName === '#text') {
+            node.remove();
+        }
+    });
     </script>
 </body>
 

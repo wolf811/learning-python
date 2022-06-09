@@ -101,29 +101,17 @@
                 el.classList.add('error');
                 console.log(`Поле ${el} пустое`);
             }
-            el.addEventListener('blur', () => {
-                el.classList.remove('error');
-            });
-
         });
-
     });
 
-    /* ТАК ДО КОНЦА И НЕ ПОНЯЛ КАК ПРАВИЛЬНО И В КАКОЙ ПОСДОВАТЕЛЬНОСТИ 
-    ПРИМЕНЯТЬ СОБЫТИЯ, ЧТОБЫ ПОЛУЧИЛОСЬ КАК В УСЛОВИИ, А МОЖЕТ НЕПРАВИЛЬНО ПОНЯЛ
-    УСЛОВИЕ */
-
-    // function validation() {
-    //     formControl.forEach(el => {
-    //         if (el.value === "") {
-    //             event.target.classList.add('error');
-    //             console.log(`Поле ${el} пустое`);
-    //         }
-    //         if (el.value) {
-    //             event.target.classList.remove('error');
-    //         }
-    //     })
-    // }
+    formEl.addEventListener('input', event => {
+        if(!event.target.classList.contains('form-control')) {
+            return;
+        }
+        event.target.value === ""
+            ? event.target.classList.add('error')
+            : event.target.classList.remove('error');
+    });
     </script>
 </body>
 
