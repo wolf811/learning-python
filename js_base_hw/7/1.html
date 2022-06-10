@@ -58,30 +58,41 @@
         H99: "Однако, программирование, в итоге, принесет свои плоды.",
     };
 
-    const navEl = document.querySelector('nav');
-    const navLinkEl = document.querySelectorAll('.nav-link');
-    const activeEl = document.querySelectorAll('.active');
-    navLinkEl.forEach(el => {
-        el.addEventListener('click', event => {
-            if(!el.classList.contains('active')) {
-                event.target.classList.add('active');
+    const navEl = document.querySelector('.nav');
+    const linkEls = document.querySelectorAll('.nav-link');
+    const divEl = document.querySelector('.text');
+    
+    navEl.addEventListener('click', event => {
+        const target = event.target;
+        if(target.classList.contains('nav-link')) {
+            for (let link of linkEls) {
+                link.classList.remove('active');
             }
-            // el.classList.remove('active');
-        })
-    })
 
-    function changeTabActive() {
-        const index = navLinkEl.length;
-        navLinkEl.forEach(el => el.classList.remove('active'));
-        navLinkEl[index] = 
-    }
-    navLinkEl.addEventListener('click', changeTabActive)
+            target.classList.add('active');
+
+            for (let key in panelText) {
+                if(key === target.parentNode.dataset.text) {
+                    divEl.textContent = panelText[key];
+                }
+            }
+        }
+    });
+    
     /*
     2. Необходимо сделать так, чтобы при изменении input'а менялся и размер шрифта
     у элемента с id="inputDiv". Перемещение ползунка должно плавно увеличивать
     шрифт у текста, никакого резкого увеличения шрифта не должно быть при
     перетаскивании ползунка.
      */
+
+    const rangeEl = document.querySelector('input');
+    const inputDiv = document.querySelector('#inputDiv');
+
+    rangeEl.addEventListener('input', () => {
+        inputDiv.style.fontSize = rangeEl.value + "px";
+    })
+
     </script>
 </body>
 
